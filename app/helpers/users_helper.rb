@@ -55,7 +55,7 @@ module UsersHelper
   end
 
   def percentage_not_interviewing
-    ((total_students - total_students_interviewing) / total_students.to_f * 100)
+    ((number_students_hireable - total_students_interviewing) / number_students_hireable.to_f * 100)
   end
 
   def percentage_interviewing
