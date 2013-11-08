@@ -28,9 +28,10 @@ class User < ActiveRecord::Base
   # Validation of attributes #
 
   validates_presence_of   :name
-  validates_presence_of   :email
 
-  validates_uniqueness_of :email
+  validates :email, :presence => true,
+                    :uniqueness => { :case_sensitive => false },
+                    :format => { :with => /#{ENV['EMAIL_REGEX']}/, :on => :create }
 
   has_secure_password
   validates :password,
