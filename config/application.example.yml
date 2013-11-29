@@ -3,6 +3,7 @@ development:
   GMAIL_PASSWORD: "Your Gmail Password"
   CRUNCHBASE_API: "Your Crunchbase API Key"
 
+
 test:
   GMAIL_USERNAME: "Your Gmail Username"
   GMAIL_PASSWORD: "Your Gmail Password"
@@ -12,3 +13,4 @@ production:
   GMAIL_USERNAME: "Your Gmail Username"
   GMAIL_PASSWORD: "Your Gmail Password"
   CRUNCHBASE_API: "Your Crunchbase API Key"
+  SECRET_TOKEN:		"Your Secret Token"
