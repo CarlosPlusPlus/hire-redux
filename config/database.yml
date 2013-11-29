@@ -1,0 +1,21 @@
+development:
+  adapter:  <%= ENV['DEV_ADAPTER'] %>
+  database: <%= ENV['DEV_DB'] %>
+  pool:     <%= ENV['DEV_POOL'] %>
+  timeout:  <%= ENV['DEV_TIMEOUT'] %>
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+
+test:
+  adapter:  <%= ENV['TEST_ADAPTER'] %>
+  database: <%= ENV['TEST_DB'] %>
+  pool:     <%= ENV['TEST_POOL'] %>
+  timeout:  <%= ENV['TEST_TIMEOUT'] %>
+
+production:
+  adapter:  <%= ENV['PROD_ADAPTER'] %>
+  database: <%= ENV['PROD_DB'] %>
+  pool:     <%= ENV['PROD_POOL'] %>
+  timeout:  <%= ENV['PROD_TIMEOUT'] %>

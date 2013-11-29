@@ -19,7 +19,6 @@
 
 # Ignore application and database configuration
 /config/application.yml
-/config/database.yml
 /config/deploy.rb
 
 # Ignore all solr data.
