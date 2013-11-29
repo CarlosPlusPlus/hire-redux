@@ -26,3 +26,8 @@ PROD_TIMEOUT:		5000
 
 # Secret Token for Session Persistence
 SECRET_TOKEN:		"Your Secret Token"
+
+# Deployment Credentials
+APP_NAME:				"AppName"
+APP_REPO:				"GitHub Repo Address"
+APP_SERVER_IP:	"NNN.NNN.NNN.NNN"

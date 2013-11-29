@@ -3,10 +3,10 @@ set :whenever_command, "bundle exec whenever"
 
 require 'whenever/capistrano'
 
-set :application, "Your Application Name"
-set :repository,  "Your Github Repository"
+set :application, ENV['APP_NAME']
+set :repository,  ENV['APP_REPO']
 
-set :user, 'Server Username'
+set :user, 'acdc'
 set :deploy_to, "/home/#{ user }/#{ application }"
 set :use_sudo, false
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
@@ -14,9 +14,9 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 
 default_run_options[:pty] = true
 
-role :web, "Your HTTP Server"  # Your HTTP server, Apache/etc
-role :app, "Your HTTP Server"  # This may be the same as your `Web` server
-role :db,  "Your HTTP Server"  # This may be the same as your `Web` server
+role :web, ENV['APP_SERVER_IP']  # Your HTTP server, Apache/etc
+role :app, ENV['APP_SERVER_IP']  # This may be the same as your `Web` server
+role :db,  ENV['APP_SERVER_IP']  # This may be the same as your `Web` server
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -37,11 +37,12 @@ namespace :deploy do
 
   task :symlink_config, :roles => :app do 
     run "ln -nfs #{shared_path}/application.yml #{current_release}/config/application.yml"
+    run "ln -nfs #{shared_path}/database.yml #{current_release}/config/database.yml"
     run "ln -nfs #{shared_path}/production.sqlite3 #{current_release}/db/production.sqlite3"
   end
 
 end 
 
 # Load assets here and create symlinks.
+before 'bundle:install', 'deploy:symlink_config'
 after 'deploy:update_code','deploy:setup_server'
-after 'deploy:update_code','deploy:symlink_config'
