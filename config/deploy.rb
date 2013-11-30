@@ -1,10 +1,13 @@
 require 'bundler/capistrano'
-set :whenever_command, "bundle exec whenever"
 
+set :whenever_command, "bundle exec whenever"
 require 'whenever/capistrano'
 
-set :application, ENV['APP_NAME']
-set :repository,  ENV['APP_REPO']
+# Load YAML data for deployment setup.
+settings = YAML.load_file('config/application.yml')
+
+set :application, settings['APP_NAME']
+set :repository,  settings['APP_REPO']
 
 set :user, 'acdc'
 set :deploy_to, "/home/#{ user }/#{ application }"
@@ -14,9 +17,9 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 
 default_run_options[:pty] = true
 
-role :web, ENV['APP_SERVER_IP']  # Your HTTP server, Apache/etc
-role :app, ENV['APP_SERVER_IP']  # This may be the same as your `Web` server
-role :db,  ENV['APP_SERVER_IP']  # This may be the same as your `Web` server
+role :web, settings['APP_SERVER_IP']  # Your HTTP server, Apache/etc
+role :app, settings['APP_SERVER_IP']  # This may be the same as your `Web` server
+role :db,  settings['APP_SERVER_IP']  # This may be the same as your `Web` server
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
