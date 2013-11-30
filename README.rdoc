@@ -53,6 +53,3 @@ TBD
 1. Talk about symlinks in deploy.rb
 2. SCP'ing file to the server (application.yml / database.yml)
 3. Create production database and SCP to shared folder
-
-=Stuff to put into script
-
