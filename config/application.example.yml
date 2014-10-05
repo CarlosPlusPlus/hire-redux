@@ -1,33 +1,33 @@
 # Email Login Information for ActionMailer
-GMAIL_USERNAME: "Your Gmail Username"
-GMAIL_PASSWORD: "Your Gmail Password"
+GMAIL_USERNAME: 'Your Gmail Username'
+GMAIL_PASSWORD: 'Your Gmail Password'
 
 # Crunchbase Developer API Key
-CRUNCHBASE_API: "Your Crunchbase API Key"
+CRUNCHBASE_API: 'Your Crunchbase API Key'
 
 # Email Regex for Sign-On Security
-EMAIL_REGEX:		"@example.com"
+EMAIL_REGEX:    '@example.com'
 
 # Database Credentials
-DEV_ADAPTER: 		sqlite3
-DEV_DB: 				db/development.sqlite3
-DEV_POOL:				5
-DEV_TIMEOUT:		5000
+DEV_ADAPTER:  sqlite3
+DEV_DB:       db/development.sqlite3
+DEV_POOL:     5
+DEV_TIMEOUT:  5000
 
-TEST_ADAPTER: 	sqlite3
-TEST_DB: 				db/test.sqlite3
-TEST_POOL:			5
-TEST_TIMEOUT:		5000
+TEST_ADAPTER: sqlite3
+TEST_DB:      db/test.sqlite3
+TEST_POOL:    5
+TEST_TIMEOUT: 5000
 
-PROD_ADAPTER: 	sqlite3
-PROD_DB: 				db/production.sqlite3
-PROD_POOL:			5
-PROD_TIMEOUT:		5000
+PROD_ADAPTER: sqlite3
+PROD_DB:      db/production.sqlite3
+PROD_POOL:    5
+PROD_TIMEOUT: 5000
 
 # Secret Token for Session Persistence
-SECRET_TOKEN:		"Your Secret Token"
+SECRET_TOKEN:  'Your Secret Token'
 
 # Deployment Credentials
-APP_NAME:				"AppName"
-APP_REPO:				"GitHub Repo Address"
-APP_SERVER_IP:	"NNN.NNN.NNN.NNN"
+APP_NAME:      'AppName'
+APP_REPO:      'GitHub Repo Address'
+APP_SERVER_IP: 'NNN.NNN.NNN.NNN'

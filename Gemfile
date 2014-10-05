@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -23,9 +24,9 @@ gem 'jquery-rails'
 # Custom Gems for Project #
 ###########################
 
-gem 'aasm'					     # => State Machine for relationships
-gem 'indeed', '0.1.2'		 # => Indeed API for jobs
-gem 'will_paginate'	     # => Pagination for search results
+gem 'aasm'               # => State Machine for relationships
+gem 'indeed', '0.1.2'    # => Indeed API for jobs
+gem 'will_paginate'      # => Pagination for search results
 gem 'font-awesome-rails' # => Gem to get awesome font icons working
 gem 'jquery-ui-rails'
 gem 'cancan'             # => Authorization
@@ -46,7 +47,11 @@ group :development do
   gem 'binding_of_caller'   # => works with better_errors to show instance variables
   gem 'pry-debugger'        # => debugger for project.
   gem 'quiet_assets'
-  gem "letter_opener"
+  gem 'letter_opener'
+end
+
+group :development, :test do
+  gem 'faker'
 end
 
 # To use ActiveModel has_secure_password
